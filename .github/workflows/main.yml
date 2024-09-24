@@ -10,10 +10,11 @@ jobs:
     runs-on: hidden server
     steps:
     - name: 🚚 Get latest code
+      uses: actions/checkout@v4
 
     
     - name: 📂 Sync files
-      uses: japablaza/portfolio/
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.ftp_server }}
         username: ${{ secrets.ftp_username }}
